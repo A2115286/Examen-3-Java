@@ -19,7 +19,7 @@ public class ClientesRepositorio {
 
 		public ClientesRepositorio()
 		{
-			 contabilidad = new Gestor("D:\\ARCHIVOS\\Ibero\\CUARTO\\ARQUITECTURA_SOFTWARE\\SPRING-EXAMEN3\\ContabilidadUIA\\ListaProveedores.json");		
+			 contabilidad = new Gestor("D:\\ARCHIVOS\\Ibero\\CUARTO\\ARQUITECTURA_SOFTWARE\\SPRING-EXAMEN3\\Repositorio\\ContabilidadUIA\\ListaProveedores.json");		
 			 gestorProveedores = new DecoradorProveedores(contabilidad, "proveedor");		 
 			 gestorProveedores.Print();
 			 listaProveedores = gestorProveedores.getLista();
@@ -88,6 +88,13 @@ public class ClientesRepositorio {
 		public ArrayList<InfoUIA> getListaProveedores(ParmsCliente parameters) {
 			listaProveedores = gestorProveedores.getPagina(parameters);
 			return listaProveedores;
+		}
+
+
+
+		public Object setProveedor(InfoUIA updateCliente) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 

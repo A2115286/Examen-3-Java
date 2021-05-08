@@ -16,7 +16,7 @@ import uia.com.api.ContabilidadUIA.modelo.clientes.InfoUIA;
 
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT})
 
 public class ClientesController {
 	  
@@ -88,5 +88,17 @@ public class ClientesController {
 			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
 	    }
 
+	  /**
+	     * Update cliente
+	     * @param cliente
+	     * @return
+	     */
+	  @RequestMapping(value="clientes",method = RequestMethod.PUT)
+	    public  ResponseEntity<List<InfoUIA>> actualizaCliente(@RequestBody InfoUIA updateCliente){
+			  System.out.println("Saludos desde updateCliente()");
+			  if(clientes.agregaCatalogo(updateCliente) == null)
+				  System.out.println("Error en actualizaCliente()");
+			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
+	    }
 	  
 	}
